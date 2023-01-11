@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulario completo</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ejemplo de formulario completo con campos agrupados</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+    
+            <h2>Datos:</h2>
+    
+            <fieldset>
+                <legend>Datos personales</legend>
+                
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required pattern="^([a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\s|-)?)+$">
+    
+                <label for="apellido1">Primer apellido</label>
+                <input type="text" name="apellido1" id="apellido1" required pattern="^([a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\s|-)?)+$">
+    
+                <label for="apellido2">Segundo apellido</label>
+                <input type="text" name="apellido2" id="apellido2" required pattern="^([a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\s|-)?)+$">
+    
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" id="direccion" placeholder="Calle o plaza con número y piso" required pattern="^\S+.*$">
+    
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="123 45 67 89" required pattern="^[0-9]{3}\s[0-9]{2}\s[0-9]{2}\s[0-9]{2}$">
+
+                <label for="e-mail">E-mail</label>
+                <input type="email" name="e-mail" id="e-mail" required placeholder="ejemplo@ejemplo.com">
+
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" required>
+
+                <label for="repeat-contraseña">Repite la contraseña</label>
+                <input type="password" name="repeat-contraseña" id="repeat-contraseña" required>
+                
+                <div>
+                    <p>Sexo</p>
+
+                    <label for="v">Varón</label>
+                    <input type="radio" name="sexo" id="v">
+
+                    <label for="m">Mujer</label>
+                    <input type="radio" name="sexo" id="m">
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Nivel de estudios e intereses</legend>
+                
+                <div>
+                    <p>Nivel de estudios</p>
+
+                    <div>
+                        <label for="1">Certificado escolar</label>
+                        <input type="radio" name="estudios" id="1" value="1" checked>
+                    </div>
+
+                    <div>
+                        <label for="2">Graduado en E.S.O.</label>
+                        <input type="radio" name="estudios" id="2" value="2">
+                    </div>
+
+                    <div>
+                        <label for="3">Bachiller -  Formación Profesional</label>
+                        <input type="radio" name="estudios" id="3" value="3">
+                    </div>
+
+                    <div>
+                        <label for="4">Diplomado</label>
+                        <input type="radio" name="estudios" id="4" value="4">
+                    </div>
+
+                    <div>
+                        <label for="5">Licenciado o Doctorado</label>
+                        <input type="radio" name="estudios" id="5" value="5">
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Recibir artículos sobre los siguientes temas:</p>
+
+                    <label for="musica">Música</label>
+                    <input type="checkbox" name="musica" id="musica" />
+
+                    <label for="deportes">Deportes</label>
+                    <input type="checkbox" name="deportes" id="deportes" />
+
+                    <label for="cine">Cine</label>
+                    <input type="checkbox" name="cine" id="cine" />
+
+                    <label for="libros">Libros</label>
+                    <input type="checkbox" name="libros" id="libros" />
+
+                    <label for="ciencia">Ciencia</label>
+                    <input type="checkbox" name="ciencia" id="ciencia" />
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Datos sobre la revista</legend>
+                
+                <label for="frecuencia">Frecuencia con la que se recibirá la revista</label>
+                <select name="frecuencia" id="frecuencia">
+                    <option>semanal</option>
+                    <option>quincenal</option>
+                    <option>mensual</option>
+                    <option>bimensual</option>
+                </select>
+
+                <p>
+                    Puedes mandar tu artículo sobre cualquier tema de los que tratamos. Nosotros lo valoraremos para que pueda ser publicado.
+                </p>
+
+                <label for="articulo">Mandar artículo:</label>
+                <input type="file" name="artículo" id="articulo" />
+
+                <label for="comentario">
+                    Si deseas mandar simplemente una opinion o comentario escribelo aquí:
+                </label>
+                <div>
+                    <textarea name="comentario" id="comentario" cols="30" rows="5" placeholder="Escribe tu comentario..."></textarea>
+                </div>
+            </fieldset>
+    
+            <div class="flex-container">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar Todo" />
+            </div>
+    
+        </form>
+    </div>
+</body>
+
+</html>
