@@ -8,6 +8,8 @@ function main() {
     const repeatPasswdInput = document.getElementById('repeat-contraseña')
     /** @type {HTMLInputElement} */
     const phoneInput = document.getElementById('telefono')
+    /** @type {HTMLInputElement} */
+    const sexRadioNodeList = document.getElementsByName('sexo')
 
     form.addEventListener('submit', handleSubmit)
     phoneInput.addEventListener('keypress', handlePhoneInput)
@@ -34,6 +36,14 @@ function main() {
     function handleSubmit (e) {
         e.preventDefault()
 
+        const checkedSexOption = Array.from(sexRadioNodeList).filter(input => input.checked)
+
+        if (checkedSexOption.length === 0) {
+            sexRadioNodeList[0].focus()
+            window.scrollTo(500, 500)
+            return
+        }
+        
         if (passwdInput.value === repeatPasswdInput.value) {
             form.submit()
         }
